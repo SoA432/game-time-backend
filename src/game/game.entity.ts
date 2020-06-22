@@ -1,6 +1,5 @@
 import { BaseEntity, Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
 import { User } from '../auth/user.entity';
-import { IsNotEmpty } from 'class-validator';
 
 @Entity()
 export class Game extends BaseEntity {
@@ -48,15 +47,6 @@ export class Game extends BaseEntity {
 
   @Column()
   discountPrice: number;
-
-  // @Column()
-  // comments: Array<{
-  //   title: string,
-  //   description: string;
-  //   rating: number;
-  //   username: string;
-  //   date: Date;
-  // }>;
 
   @ManyToOne(type => User, user => user.games, { eager: false })
   user: User;

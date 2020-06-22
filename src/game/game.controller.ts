@@ -28,7 +28,6 @@ export class GameController {
   createGame(
     @Body() createGameEntityDtoDto: CreateGameEntityDto,
     @GetUser() user: User): Promise<Game> {
-    console.log(createGameEntityDtoDto);
 
     return this.gamesService.createGame(createGameEntityDtoDto, user);
   }
